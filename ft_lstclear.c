@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:30:40 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 16:46:33 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:50:02 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current;
 	t_list	*next;
 
-	if (lst == NULL || *lst == NULL)
+	if (lst == NULL || del == NULL)
 		return ;
 	current = *lst;
 	while (current != NULL)

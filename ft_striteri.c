@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:09:48 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/24 16:43:56 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:23:46 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_striteri(char *s, void (*striteri_f)(unsigned int, char *))
 	int	j;
 
 	j = 0;
+	if (s == NULL)
+		return ;
 	while (s[j] != '\0')
 	{
 		striteri_f(j, &s[j]);

@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:49:03 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 16:44:16 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:27:43 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	if (s[0] == '\0')
 		return (ft_strdup(""));
 	s_len = ft_int_strlen(s);

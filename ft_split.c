@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:37:08 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 16:55:26 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:19:33 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	int		word_count;
 	char	**before_split;
 
+	if (s == NULL)
+		return (NULL);
 	word_count = count_words(s, c);
 	before_split = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (before_split == NULL)

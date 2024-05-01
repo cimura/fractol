@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:36:09 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/30 15:38:13 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:26:34 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (s == NULL)
+		return ;
+	write(fd, &*s, ft_strlen(s));
 }
 
 // int	main(void)

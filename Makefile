@@ -6,17 +6,20 @@ BONUS_OBJS	=	$(BONUS_SRCS:%.c= %.o)
 CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror
 
+ifeq ($(BONUS), true)
+OBJS += $(BONUS_OBJS)
+endif
+
 all: $(NAME)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-		ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-		touch bonus
+bonus:
+		$(MAKE) BONUS=true
 
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
 clean:
-		rm -f $(OBJS) $(BONUS_OBJS) bonus
+		rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 		rm -f $(NAME)

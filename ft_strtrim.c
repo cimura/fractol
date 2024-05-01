@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:13:13 by cimy              #+#    #+#             */
-/*   Updated: 2024/04/26 11:00:54 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:19:07 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	char	*result;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = 0;
 	len = ft_strlen(s1);
 	while (s1[start] != '\0' && ft_strchr(set, s1[start]) != NULL)
