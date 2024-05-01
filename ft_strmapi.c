@@ -1,0 +1,62 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/24 10:49:03 by sshimura          #+#    #+#             */
+/*   Updated: 2024/04/29 16:44:16 by sshimura         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+unsigned int	ft_int_strlen(const char *str)
+{
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
+}
+
+char	f(unsigned int n, char c)
+{
+	char	result;
+
+	result = (char)n + c;
+	return (result);
+}
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned int	i;
+	unsigned int	s_len;
+	char			*result;
+
+	i = 0;
+	if (s[0] == '\0')
+		return (ft_strdup(""));
+	s_len = ft_int_strlen(s);
+	result = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (result == NULL)
+		return (NULL);
+	while (i < s_len)
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}
+
+// int	main(void)
+// {
+// 	char			s[] = "LoReM iPsUm";
+// 	char			*result;
+
+// 	result = ft_strmapi(s, f);
+// 	printf("result: %s\n", result);
+// }

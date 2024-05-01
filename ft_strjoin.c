@@ -1,0 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/21 15:31:38 by sshimura          #+#    #+#             */
+/*   Updated: 2024/04/30 15:37:46 by sshimura         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static void	ft_strcpy(char *dst, char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		i;
+	int		j;
+	char	*result;
+	size_t	s1_len;
+	size_t	s2_len;
+
+	i = 0;
+	j = 0;
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (result == NULL)
+		return (NULL);
+	ft_strcpy(result, (char *)s1);
+	ft_strcpy(result + s1_len, (char *)s2);
+	result[s1_len + s2_len] = '\0';
+	return (result);
+}
+
+// int	main(void)
+// {
+// 	char const *s1;
+// 	char const *s2;
+// 	char	*result;
+
+// 	s1 = "ABCDE";
+// 	s2 = "1234";
+// 	printf("s1: %s\ns2: %s\n", s1, s2);
+// 	result = ft_strjoin(s1, s2);
+// 	printf("result: %s\n", result);
+// }
