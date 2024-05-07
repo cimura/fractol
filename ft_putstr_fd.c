@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:36:09 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:26:34 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:19 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,3 @@ void	ft_putstr_fd(char *s, int fd)
 		return ;
 	write(fd, &*s, ft_strlen(s));
 }
-
-// int	main(void)
-// {
-// 	char	s[] = "hello";
-// 	int		fd = 1;
-// 	ft_putstr_fd(s, fd);
-// }

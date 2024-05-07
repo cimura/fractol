@@ -6,13 +6,13 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:37:08 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:19:33 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:42 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -28,7 +28,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-int	ft_strlen_to_c(const char *s, int start, char c)
+static int	ft_strlen_to_c(const char *s, int start, char c)
 {
 	int	len_count;
 
@@ -41,7 +41,7 @@ int	ft_strlen_to_c(const char *s, int start, char c)
 	return (len_count);
 }
 
-char	*allocate_memory(int word_len)
+static char	*allocate_memory(int word_len)
 {
 	char	*return_ptr;
 
@@ -51,7 +51,7 @@ char	*allocate_memory(int word_len)
 	return (return_ptr);
 }
 
-char	**generate_substrings(char const *s, char **before_split, char c)
+static char	**generate_substrings(char const *s, char **before_split, char c)
 {
 	int	i;
 	int	j;
@@ -103,20 +103,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (before_split);
 }
-
-// int	main(void)
-// {
-// 	char *s = "olol     ";
-// 	char c = ' ';
-// 	char **result;
-
-// 	result = ft_split(s, c);
-// 	int i = 0;
-// 	while (result[i] != NULL)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	// printf("HI");
-// 	return (0);
-// }

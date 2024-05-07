@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:55:27 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 16:49:28 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:52:16 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,45 +39,3 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return ((void *)ptr);
 }
-
-// size has already been decided.
-
-// int main(void)
-// {
-// 	char *ft_mem;
-// 	char *mem;
-// 	size_t i = 0;
-// 	size_t count = 0;
-
-// 	ft_mem = ft_calloc(0, 0);
-
-// 	if (ft_mem != NULL)
-// 	{
-// 		printf("--- Mine ---\n");
-// 		printf("Allocated memory: ");
-// 		while (i < count)
-// 		{
-// 			printf("%d ", ft_mem[i]);
-// 			i++;
-// 		}
-// 		free(ft_mem);
-// 	}
-// 	printf("\n\n");
-
-// 	mem = calloc(0, 0);
-// 	i = 0;
-
-// 	if (mem != NULL)
-// 	{
-// 		printf("--- Original ---\n");
-// 		printf("Allocated memory: ");
-// 		while (i < count)
-// 		{
-// 			printf("%d ", mem[i]);
-// 			i++;
-// 		}
-// 		free(mem);
-// 	}
-// 	printf("\n");
-// 	return (0);
-// }

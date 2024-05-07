@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:43:56 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/24 17:02:10 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:16 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd(n % 10 + '0', fd);
 }
-
-// int	main(void)
-// {
-// 	int	n = -2147483648;
-// 	int	fd = 1;
-// 	ft_putnbr_fd(n, fd);
-// }

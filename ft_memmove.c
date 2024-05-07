@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:48:03 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/30 15:39:02 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:53:56 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	ft_strncpy(dst_ptr, src_ptr, len);
 	return ((void *)dst_ptr);
 }
-
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char	ft_dst_ptr[100];
-// 	const char	*src_ptr = "Hello";
-// 	size_t	len = 4;
-
-// 	printf("Before: %s\n", src_ptr);
-// 	printf("%zu文字分コピー\n--------\n", len);
-
-// 	char	*result;
-// 	result = ft_memmove((void *)ft_dst_ptr, (const void *)src_ptr, len);
-// 	printf("Mine: %s\n", result);
-
-// 	char dst_ptr[100];
-// 	result = memmove((void *)dst_ptr, (const void *)src_ptr, len);
-// 	printf("Original: %s\n", result);
-// }

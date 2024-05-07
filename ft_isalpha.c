@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura < sshimura@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:54:30 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/16 19:14:39 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:52:29 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-//#include <stdio.h>
-//#include <ctype.h>
-
-//int	main(int argc, char** argv)
-//{
-//	if (argc != 2)
-//		return (0);
-//	if (argv[1][1] != '\0')
-//		printf("Judging by the first letter.\n");
-//	int result = ft_isalpha(argv[1][0]);
-//	printf("Mine: %d\n", result);
-//	result = isalpha(argv[1][0]);
-//	printf("Original: %d\n", result);
-//}

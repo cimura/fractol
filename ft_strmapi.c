@@ -6,13 +6,13 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 10:49:03 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:27:43 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:56:05 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_int_strlen(const char *str)
+static unsigned int	ft_int_strlen(const char *str)
 {
 	int	count;
 
@@ -20,14 +20,6 @@ unsigned int	ft_int_strlen(const char *str)
 	while (str[count] != '\0')
 		count++;
 	return (count);
-}
-
-char	f(unsigned int n, char c)
-{
-	char	result;
-
-	result = (char)n + c;
-	return (result);
 }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -53,12 +45,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	char			s[] = "LoReM iPsUm";
-// 	char			*result;
-
-// 	result = ft_strmapi(s, f);
-// 	printf("result: %s\n", result);
-// }

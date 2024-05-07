@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 15:30:40 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:50:02 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:53:08 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
-
-// int	main(void)
-// {
-// 	char	*test1 = "hello";
-// 	char	*test2 = "world";
-
-// 	t_list	*lst = ft_lstnew(test1);
-// 	ft_lstadd_front(&lst, ft_lstnew(test2));
-
-// 	ft_lstclear(&lst, del_clear);
-// }

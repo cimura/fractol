@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:31:38 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:18:22 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:55:12 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[s1_len + s2_len] = '\0';
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	char const *s1;
-// 	char const *s2;
-// 	char	*result;
-
-// 	s1 = "ABCDE";
-// 	s2 = "1234";
-// 	printf("s1: %s\ns2: %s\n", s1, s2);
-// 	result = ft_strjoin(s1, s2);
-// 	printf("result: %s\n", result);
-// }

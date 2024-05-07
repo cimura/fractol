@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:40:21 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/28 20:38:23 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:56:30 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	}
 	return (NULL);
 }
-
-// #include <string.h>
-
-// int main(void)
-// {
-// 	const char *haystack;
-// 	const char *needle;
-// 	size_t n;
-
-// 	haystack = "";
-// 	needle = "";
-// 	n = 4;
-// 	char *result;
-
-// 	result = strnstr(haystack, needle, n);
-// 	printf("Original: %s\n", result);
-
-// 	result = ft_strnstr(haystack, needle, n);
-// 	printf("Mine: %s\n", result);
-// }

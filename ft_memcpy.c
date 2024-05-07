@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:49:10 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/30 13:39:39 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:53:47 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	unsigned char dst[15];
-// 	unsigned char src[] = "hello";
-// 	size_t n = 7;
-// 	ft_memcpy(dst, src, n);
-// }

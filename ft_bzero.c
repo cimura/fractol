@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura < sshimura@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:56:10 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/21 13:09:51 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:52:07 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,3 @@ void	ft_bzero(void *s, size_t len)
 		i++;
 	}
 }
-
-//int	main(void)
-//{
-//	size_t ft_str[] = {1, 2, 3, 4};
-//	size_t len = 2;	
-
-//	printf("Before: ");
-//	for(size_t i = 0; i < sizeof(ft_str) / sizeof(size_t); i++)
-//		printf("%zu ", ft_str[i]);
-//	printf("\n");
-
-//	ft_bzero(ft_str, len * sizeof(size_t));
-//	printf("Mine: ");
-//	for(size_t j = 0; j < sizeof(ft_str) / sizeof(size_t); j++)
-//		printf("%zu ", ft_str[j]);
-//	printf("\n");
-
-//	size_t str[] = {1, 2, 3, 4};
-//	bzero(str, len * sizeof(size_t));
-//	printf("Original: ");
-//	for(size_t k = 0; k < sizeof(str) / sizeof(size_t); k++)
-//		printf("%zu ", str[k]);
-//	printf("\n");
-//	return (0);
-//}

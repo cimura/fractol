@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:41:39 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/24 16:16:29 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:56:11 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// #include <string.h>
-
-// int	main(int argc, char** argv)
-// {
-// 	if (argc != 4)
-// 		return (0);
-// 	else
-// 	{
-// 		const char *s1;
-// 		const char *s2;
-// 		size_t n;
-
-// 		s1 = argv[1];
-// 		s2 = argv[2];
-// 		n = atoi(argv[3]);
-
-// 		int result = ft_strncmp(s1, s2, n);
-// 		printf("Mine: %d\n", result);
-// 		result = strncmp(s1, s2, n);
-// 		printf("Original: %d\n", result);
-// 	}
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura < sshimura@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:47:17 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/21 13:11:20 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:02 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return ((void *)b_ptr);
 }
-
-//#include <string.h>
-
-//int	main(void)
-//{
-//	char str[] = "Hello";
-//	size_t len = 2;
-//	int	c = 'k';
-
-//	printf("Before: %s\n", str);
-
-//	ft_memset(str+1, c, len);
-//	printf("Mine: %s\n", str);
-
-//	memset(str+1, c, len);
-//	printf("Original: %s\n", str);
-//	return (0);
-//}

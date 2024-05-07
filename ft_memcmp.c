@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura < sshimura@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:50:38 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/19 18:05:46 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:53:43 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-//#include <stdio.h>
-
-//int	main(void)
-//{
-//	const char	*s1 = "BCd\0dd";
-//	const char	*s2 = "BCd\0ed";
-//	size_t n = 6;
-//	printf("s1: %s\ns2: %s\n", s1, s2);
-
-//	printf("---------\n");
-
-//	int	result = ft_memcmp(s1, s2, n);
-//	printf("Mine: %d\n", result);
-
-//	result = memcmp(s1, s2, n);
-//	printf("Original: %d\n", result);
-//}

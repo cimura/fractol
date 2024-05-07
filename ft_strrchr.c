@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:39:27 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 10:27:46 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:56:39 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-//#include <string.h>
-
-//int	main(void)
-//{
-//	const char *s = "Hello, world.";
-//	int c = '\0';
-//	const char *result;
-
-//	result = ft_strrchr(s, c);
-//	printf("Mine: %s\n", result);
-//	result = strrchr(s, c);
-//	printf("Original: %s\n", result);
-//}

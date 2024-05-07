@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura < sshimura@student.42tokyo.jp>    +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:44:38 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/21 14:34:21 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:54:55 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,3 @@ char	*ft_strdup(const char *str)
 	result[i] = '\0';
 	return (result);
 }
-
-//#include <string.h>
-//#include <stdio.h>
-
-//int main(void)
-//{
-//	char *str = "Hello!!";
-//	char *ft_result;
-//	char	*result;
-
-//	printf("Before: %s\n", str);
-//	printf("----------------\n");
-
-//	ft_result = ft_strdup(str);
-//	result = strdup(str);
-
-//	if (ft_result != NULL)
-//		printf("Mine: %s\n", ft_result);
-//	free(ft_result);
-
-//	if (result != NULL)
-//		printf("Original: %s\n", result);
-//	free(result);
-//}

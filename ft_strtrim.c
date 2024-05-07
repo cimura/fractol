@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:13:13 by cimy              #+#    #+#             */
-/*   Updated: 2024/05/01 11:19:07 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:56:44 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = ft_substr(s1, start, len - start);
 	return (result);
 }
-
-// int main(void)
-// {
-// 	char const *s1 = "xxxz  test with x and z and x .  zx  xx z";
-// 	char const *set = "z x";
-// 	char *result;
-
-// 	result = ft_strtrim(s1, set);
-// 	printf("%s\n", result);
-// }
