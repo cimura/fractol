@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:48:03 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/06 14:53:56 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/06/05 00:51:37 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*dst_ptr;
 	unsigned char	*src_ptr;
-	size_t			i;
 
 	dst_ptr = (unsigned char *)dst;
 	src_ptr = (unsigned char *)src;
-	i = 0;
 	if (dst == NULL && src == NULL)
 		return (NULL);
 	ft_strncpy(dst_ptr, src_ptr, len);

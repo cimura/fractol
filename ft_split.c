@@ -1,105 +1,101 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/21 15:37:08 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/06 14:54:42 by sshimura         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
 
-#include "libft.h"
+// デバッグ用のprintfをマクロで定義
+#define Printf()
 
-static int	count_words(char const *s, char c)
+int count_word(char const *str, char charset)
 {
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
+	int i = 0;
+	int count;
+	// int    flag_word_in = 0;
+	if (str[0] == charset)
+		count = 0;
+	else
+		count = 1;
+	// while (str[i] == charset)
+	// 	i++;
+	while (str[i] != '\0')
 	{
-		if (s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
+		if (str[i] == charset && str[i + 1] != charset && str[i + 1] != '\0')
 			count++;
 		i++;
 	}
+	// printf("word_count: %d\n", count);
 	return (count);
 }
 
-static int	ft_strlen_to_c(const char *s, int start, char c)
+int ft_strlen(char const *str, char charset, int indx)
 {
-	int	len_count;
+	// char const *pointer_to_str;
+	// int indx = 0;
+	int count = 0;
 
-	len_count = 0;
-	while (s[start] != '\0' && s[start] != c)
+	// pointer_to_str = str;
+
+	// printf("in str_len \n");
+	while (str[indx] == charset)
+		indx++;
+	while (str[indx]  != '\0')
 	{
-		len_count++;
-		start++;
+		// printf("in a loop\n");
+		if (str[indx] != charset)
+			count++;
+		if (str[indx]  == charset)
+			break;
+		indx++;
 	}
-	return (len_count);
+	// printf("str_len :%d\n", count);
+	return (count);
 }
 
-static char	*allocate_memory(int word_len)
+char **ft_split(char const *str, char charset)
 {
-	char	*return_ptr;
+	char **result;
+	int word_count = 0;
+	int i = 0;
+	int j;
+	int str_len = 0;
 
-	return_ptr = (char *)malloc(sizeof(char) * (word_len + 2));
-	if (return_ptr == NULL)
+	int str_indx = 0;
+
+	word_count = count_word(str, charset);
+	// printf("%d", word_count);
+	result = malloc(sizeof(char *) * (word_count + 1));
+	// printf("after malloc\n");
+	if (!result)
 		return (NULL);
-	return (return_ptr);
-}
+	// printf("after malloc\n");
 
-static char	**generate_substrings(char const *s, char **before_split, char c)
-{
-	int	i;
-	int	j;
-	int	word_len;
-	int	indx;
-
-	i = 0;
-	indx = 0;
-	while (s[indx] != '\0')
+	result[word_count] = NULL;
+	while (i < word_count)
 	{
-		while (s[indx] == c)
-			indx++;
-		if (s[indx] == '\0')
-			break ;
-		word_len = ft_strlen_to_c(s, indx, c);
-		before_split[i] = allocate_memory(word_len);
-		j = word_len - 1;
-		while (j >= 0)
+		j = 0;
+		// printf("in a loop\n");
+
+		str_len = ft_strlen(str, charset, str_indx);
+		result[i] = malloc(str_len + 1);
+		if (!*result)
+			return (NULL);
+		while (j < str_len)
 		{
-			before_split[i][j] = s[indx + j];
-			j--;
+			while (str[str_indx] == charset)
+				str_indx++;
+			// printf("str_indx: %d\n", str_indx);
+			// printf("j: %d\n", j);
+			result[i][j] = str[str_indx];
+			j++;
+			str_indx++;
 		}
-		indx += word_len;
-		before_split[i++][word_len] = '\0';
+		// printf("str_indx: %d\n", str_indx);
+		str_indx++;
+		i++;
+		// printf("str_len: %d\n", str_len);
 	}
-	return (before_split);
-}
+	// while (!**result)
+	// {
 
-char	**ft_split(char const *s, char c)
-{
-	int		word_count;
-	char	**before_split;
+	// }
 
-	if (s == NULL)
-		return (NULL);
-	word_count = count_words(s, c);
-	before_split = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (before_split == NULL)
-	{
-		free(before_split);
-		return (NULL);
-	}
-	before_split[word_count] = NULL;
-	before_split = generate_substrings(s, before_split, c);
-	if (before_split == NULL)
-	{
-		free(before_split);
-		return (NULL);
-	}
-	return (before_split);
+	return (result);
 }
