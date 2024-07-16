@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:31:38 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/06 14:55:12 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/06/05 00:51:55 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,10 @@ static void	ft_strcpy(char *dst, char *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	int		j;
 	char	*result;
 	size_t	s1_len;
 	size_t	s2_len;
 
-	i = 0;
-	j = 0;
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	s1_len = ft_strlen(s1);
