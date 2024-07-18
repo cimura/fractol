@@ -8,7 +8,7 @@
 #define WIDTH   1600
 #define HEIGHT  1200
 #define SIZE    2000
-#define LOOP_LIMIT  50
+#define LOOP_LIMIT  40
 #define MAX_ITERATIONS 1000000
 
 typedef struct s_fractal
@@ -17,7 +17,7 @@ typedef struct s_fractal
     void    *win;
     void    *img;
     char    *addr;
-    int     bits_per_pixel;
+    int     bpp;
     int     line_length;
     int     endian;
 
@@ -83,7 +83,7 @@ void put_color_to_pixel(t_fractal *fractal, int x, int y, int color)
 
     if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
     {
-        mlx_data_addr = fractal->addr + (y * fractal->line_length + x * (fractal->bits_per_pixel / 8));
+        mlx_data_addr = fractal->addr + (y * fractal->line_length + x * (fractal->bpp / 8));
         *(unsigned int *)mlx_data_addr = color;
     }
 }
@@ -94,6 +94,7 @@ int key_hook(int keycode, t_fractal *fractal)
     {
         mlx_destroy_window(fractal->mlx, fractal->win);
         mlx_destroy_image(fractal->mlx, fractal->img);
+        fractal->mlx = NULL;
         exit(0);
     }
     if (keycode == 4)
@@ -124,7 +125,7 @@ int Mandel(t_fractal *fractal)
         z = complex_add(complex_mul(z, z), c);
         i++;
         fractal->count++;
-        if (fractal->count > MAX_ITERATIONS - fractal->zoom*100)
+        if (fractal->count > MAX_ITERATIONS + fractal->zoom*100)
             return (-1);
     }
 
@@ -167,17 +168,18 @@ int render_next_frame(t_fractal *fractal)
     //     fractal->is_zoomed = 0;
     // }
 
-    for (int i = 0; i < 1000; i++)
+    while (1)
     {
         result = Mandel(fractal);
         if (result == -1)
         {
             mlx_put_image_to_window(fractal->mlx, fractal->win, fractal->img, 0, 0);
-            draw_zoom_level(fractal);
+            // draw_zoom_level(fractal);
             fractal->count = 0;
             return (0);
         }
-
+        else
+        {
         fractal->y++;
         if (fractal->y >= HEIGHT)
         {
@@ -191,6 +193,7 @@ int render_next_frame(t_fractal *fractal)
                 fractal->count = 0;
                 return (0);
             }
+        }
         }
     }
 
@@ -231,7 +234,7 @@ int main(void)
     fractal.mlx = mlx_init();
     fractal.win = mlx_new_window(fractal.mlx, WIDTH, HEIGHT, "Mandel Set");
     fractal.img = mlx_new_image(fractal.mlx, WIDTH, HEIGHT);
-    fractal.addr = mlx_get_data_addr(fractal.img, &fractal.bits_per_pixel, &fractal.line_length, &fractal.endian);
+    fractal.addr = mlx_get_data_addr(fractal.img, &fractal.bpp, &fractal.line_length, &fractal.endian);
 
     fractal.zoom = 300.0;
     fractal.offset_x = -0.5;

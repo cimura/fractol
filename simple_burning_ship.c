@@ -9,7 +9,7 @@
 #define HEIGHT  1200
 #define SIZE    2000
 #define LOOP_LIMIT  100
-#define MAX_ITERATIONS 100000000
+#define MAX_ITERATIONS 10000000
 
 typedef struct s_fractal
 {
