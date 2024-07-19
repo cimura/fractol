@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:56:59 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 11:04:27 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:04:12 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	whitespace(char check_chr)
 		return (0);
 }
 
-int	decide_sign(const char *str, int *indx)
+static int	decide_sign(const char *str, int *indx)
 {
 	int	sign;
 	int	i;
@@ -64,16 +64,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)result * sign);
 }
-
-// int main(void)
-// {
-// 	const char *str;
-// 	int result;
-
-// 	str = "18446744073709551616";
-
-// 	result = ft_atoi(str);
-// 	printf("Mine: %d\n", result);
-// 	result = atoi(str);
-// 	printf("Original: %d\n", result);
-// }

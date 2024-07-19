@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 11:43:56 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/06 14:54:16 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:15:23 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+ 
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

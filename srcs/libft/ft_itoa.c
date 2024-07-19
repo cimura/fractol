@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 01:01:06 by cimy              #+#    #+#             */
-/*   Updated: 2024/04/28 20:29:02 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:06:12 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	digit_count(int n)
+static int	digit_count(int n)
 {
 	int	count;
 
@@ -38,7 +38,7 @@ int	digit_count(int n)
 	return (count);
 }
 
-char	*malloc_memory(int n, int digit)
+static char	*malloc_memory(int n, int digit)
 {
 	char	*result;
 
@@ -61,16 +61,6 @@ char	*malloc_memory(int n, int digit)
 	return (result);
 }
 
-char	*judge_malloc(int n, int digit)
-{
-	char	*result;
-
-	result = malloc_memory(n, digit);
-	if (result == NULL)
-		return (NULL);
-	return (result);
-}
-
 char	*ft_itoa(int n)
 {
 	int		digit;
@@ -90,14 +80,3 @@ char	*ft_itoa(int n)
 	}
 	return (result);
 }
-
-// int main(void)
-// {
-// 	int n = 0;
-// 	int n2 = -1234;
-// 	char *result = ft_itoa(n);
-// 	char *result2 = ft_itoa(n2);
-
-// 	printf("Positive: %s\n", result);
-// 	printf("Negative: %s\n", result2);
-// }

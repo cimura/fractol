@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:16:44 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/01 11:17:38 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:15:02 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	result[i] = '\0';
 	return (result);
 }
-
-// int	main(void)
-// {
-// 	char const *s = "simultaneously";
-// 	unsigned int	start = 100;
-// 	size_t	len = 0;
-// 	char *result;
-
-// 	result = ft_substr(s, start, len);
-// 	printf("%s\n", result);
-// }

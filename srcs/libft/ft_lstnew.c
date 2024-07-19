@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 21:16:29 by sshimura          #+#    #+#             */
-/*   Updated: 2024/04/29 10:39:12 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 00:52:01 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+static t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
@@ -23,12 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
-
-// int	main(void)
-// {
-// 	char *data = "hello";
-// 	t_list	*result;
-
-// 	result = ft_lstnew((void *)data);
-// 	printf("result->content: %s\n", (char *)result->content);
-// }

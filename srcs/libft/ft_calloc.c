@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:55:27 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/19 22:09:50 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 01:10:22 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,3 @@ void	*ft_calloc(size_t count, size_t size)
 	}
 	return ((void *)ptr);
 }
-
-// #include <limits.h>
-
-// int main(){
-// 	calloc(0, INT_MIN);
-// 	ft_calloc(0, INT_MIN);
-// }
