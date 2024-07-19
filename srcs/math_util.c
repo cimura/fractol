@@ -71,3 +71,4 @@ double	ft_atod(const char *str)
 	result += fraction / divisor;
 	return (result * sign);
 }
+

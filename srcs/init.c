@@ -8,18 +8,18 @@ static void	malloc_error(void)
 
 void	data_init(t_fractal *fractal)
 {
-	fractal->escape_value = 4;
-	fractal->out_judge = 42;
+	fractal->escape_value = 15;
+	fractal->out_judge = 30;
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
-	fractal->termination = 10000000;
+	fractal->termination = 1000000;
+	fractal->mouse_x = 0;
+	fractal->mouse_y = 0;
 }
 
 static void	events_init(t_fractal *fractal)
 {
-	// mlx_hook(vars.win, ON_DESTROY, 0, close, &vars);
-
 	mlx_key_hook(fractal->window_ptr, key_handler, fractal);
 	mlx_mouse_hook(fractal->window_ptr, mouse_handler, fractal);
 	mlx_hook(fractal->window_ptr, 6, 1L<<6, julia_track, fractal);

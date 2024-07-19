@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/18 18:17:31 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/19 21:19:46 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <math.h>
+# include <stdbool.h>
 
 # define WIDTH 1600
 # define HEIGHT 1200
@@ -30,7 +31,7 @@
 # define ORANGE 0xFFA500
 
 
-# include "../libft/libft.h"
+# include "libft/libft.h"
 
 typedef struct s_img
 {
@@ -43,17 +44,23 @@ typedef struct s_img
 
 typedef struct s_fractal
 {
+	double	x;
+	double	y;
 	t_img	img;
 	void	*mlx_ptr;
 	void	*window_ptr;
 	char	*name;
 	double	escape_value;
-	int		max_iterations; // affect image quality and rendering speed
+	int		out_judge; // affect image quality and rendering speed
+	int		termination;
+	int		count;
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
 	double	julia_x;
 	double	julia_y;
+	int		mouse_x;
+	int		mouse_y;
 }				t_fractal;
 
 typedef struct s_complex
@@ -65,6 +72,7 @@ typedef struct s_complex
 
 //*** init ***
 void		fractal_init(t_fractal *fractal);
+void		data_init(t_fractal *fractal);
 
 //*** math ***
 double		map(double unscaled_num, double new_min, double new_max, double old_min, double old_max);
@@ -74,10 +82,22 @@ int			decide_sign(const char *str, int *i);
 double		ft_atod(const char *str);
 
 // *** render ***
-void	fractal_render(t_fractal *fractal);
+// void	fractal_render(t_fractal *fractal);
+// bool	handle_pixel(int x, int y, t_fractal *fractal);
+void	my_pixel_put(int x, int y, t_img *img, int color);
 
 // *** events ***
 int	key_handler(int keycode, t_fractal *fractal);
 int	close_handler(t_fractal *fractal);
 int	mouse_handler(int button, int x, int y, t_fractal *fractal);
 int	julia_track(int x, int y, t_fractal *fractal);
+int	render_next_frame(t_fractal *fractal);
+bool	Terminate(t_fractal *fractal);
+
+// *** mandel ***
+bool	Mandel(t_fractal *fractal);
+bool	Julia(t_fractal *fractal);
+bool	burning_ship(t_fractal *fractal);
+
+// *** display ***
+void draw_zoom_level(t_fractal *fractal);

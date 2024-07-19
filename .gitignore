@@ -5,4 +5,5 @@ over.c
 my_mandel.c
 mandel.c
 draw_mal.c
-.vscode
+.vscode/
+.DS_Store

@@ -9,7 +9,7 @@
 #define HEIGHT  1200
 #define SIZE    2000
 #define LOOP_LIMIT  40
-#define MAX_ITERATIONS 1000000
+#define MAX_ITERATIONS 10000000
 
 typedef struct s_fractal
 {
@@ -110,18 +110,15 @@ int Mandel(t_fractal *fractal)
     t_complex z;
     t_complex c;
     int i;
-    double d = 100;
 
     z.re = 0;
-    z.im = 0;
+    z.im = 0;//fractal->offset_x = (x / fractal->zoom) - (WIDTH / (2.0 * fractal->zoom)) + fractal->offset_x;
     c.re = (fractal->x / fractal->zoom) - (WIDTH / (2.0 * fractal->zoom)) + fractal->offset_x;
     c.im = (fractal->y / fractal->zoom) - (HEIGHT / (2.0 * fractal->zoom)) + fractal->offset_y;
 
     i = 0;
     while (i < LOOP_LIMIT && complex_abs(z) < 15.0)
     {
-        if (d > complex_abs(z))
-            d = complex_abs(z);
         z = complex_add(complex_mul(z, z), c);
         i++;
         fractal->count++;

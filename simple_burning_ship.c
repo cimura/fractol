@@ -123,7 +123,7 @@ int calculate_burning_ship(t_fractal *fractal)
  c.im = (fractal->y / fractal->zoom) - (HEIGHT / (2.0 * fractal->zoom)) + fractal->offset_y;
  while (i < LOOP_LIMIT && complex_abs(z) < 15.0)
 {
-    z = complex_add(complex_mul(z, z), com)
+    z = complex_add(complex_mul(z, z), c)
   x_temp = fractal->zx * fractal->zx - fractal->zy * fractal->zy
    + fractal->cx;
   fractal->zy = fabs(2.0 * fractal->zx * fractal->zy) + fractal->cy;
@@ -131,9 +131,9 @@ int calculate_burning_ship(t_fractal *fractal)
   fractal->count++;
   if (fractal->count > MAX_ITERATIONS)
     return (-1);
-  if (fractal->zx * fractal->zx + fractal->zy
-   * fractal->zy >= __DBL_MAX__)
-   break ;
+//   if (fractal->zx * fractal->zx + fractal->zy
+//    * fractal->zy >= __DBL_MAX__)
+//    break ;
  }
  if (i == fractal->max_iter)
   put_color_to_pixel(fractal, fractal->x, fractal->y, 0x000000);
