@@ -16,6 +16,7 @@ void	data_init(t_fractal *fractal)
 	fractal->termination = 1000000;
 	fractal->mouse_x = 0;
 	fractal->mouse_y = 0;
+	fractal->zoom_level = 1.0;
 }
 
 static void	events_init(t_fractal *fractal)
@@ -32,27 +33,26 @@ void	fractal_init(t_fractal *fractal)
 	fractal->mlx_ptr = mlx_init();
 	if (NULL == fractal->mlx_ptr)
 		malloc_error();
-	fractal->window_ptr = mlx_new_window(fractal->mlx_ptr, WIDTH, HEIGHT, fractal->name);
+	fractal->window_ptr = mlx_new_window(fractal->mlx_ptr
+			, WIDTH, HEIGHT, fractal->name);
 
 	if (NULL == fractal->window_ptr)
 	{
-		// mlx_destroy_image(fractal->mlx_ptr, fractal->imp_ptr);
 		mlx_destroy_window(fractal->mlx_ptr, fractal->window_ptr);
 		free(fractal->mlx_ptr);
 		malloc_error();
-	}
+	} 
 	fractal->img.img_ptr = mlx_new_image(fractal->mlx_ptr, WIDTH, HEIGHT);
 	if (NULL == fractal->img.img_ptr)
 	{
 		mlx_destroy_image(fractal->mlx_ptr, fractal->img.img_ptr);
-		// mlx_destroy_window(fractal->mlx_ptr, fractal->window_ptr);
 		free(fractal->mlx_ptr);
 		malloc_error();
 	}
 	fractal->img.pixel_ptr = mlx_get_data_addr(fractal->img.img_ptr,
-												&fractal->img.bpp,
-												&fractal->img.line_length,
-												&fractal->img.endian);
+			&fractal->img.bpp,
+			&fractal->img.line_length,
+			&fractal->img.endian);
 	events_init(fractal);
 	data_init(fractal);
 }

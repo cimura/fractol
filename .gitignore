@@ -3,7 +3,6 @@ tmp->mine.c
 test.c
 over.c
 my_mandel.c
-mandel.c
 draw_mal.c
 .vscode/
 .DS_Store

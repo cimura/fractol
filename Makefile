@@ -4,9 +4,9 @@ LIBFT_DIR		=	srcs/libft
 SRCS			=	srcs/display.c \
 					srcs/events.c \
 					srcs/init.c \
-					srcs/mandel.c \
 					srcs/math_util.c \
 					srcs/render.c \
+					srcs/mandel.c \
 					srcs/main.c
 
 LIBFT			=	$(LIBFT_DIR)/libft.a

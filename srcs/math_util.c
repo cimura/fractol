@@ -1,13 +1,28 @@
-# include "fractal.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   math_util.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/19 21:54:38 by sshimura          #+#    #+#             */
+/*   Updated: 2024/07/19 21:56:52 by sshimura         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-double map(double unscaled_num, double new_min, double new_max, double old_min, double old_max)
+#include "fractal.h"
+
+double	map(double unscaled_num, double new_min
+			, double new_max, double old_max)
 {
-	return (new_max - new_min) * (unscaled_num - old_min) / (old_max - old_min) + new_min;
+	return ((new_max - new_min) * (unscaled_num - 0)
+		/ (old_max - 0) + new_min);
 }
 
 t_complex	sum_complex(t_complex z1, t_complex z2)
 {
 	t_complex	result;
+
 	result.x = z1.x + z2.x;
 	result.y = z1.y + z2.y;
 	return (result);
@@ -16,6 +31,7 @@ t_complex	sum_complex(t_complex z1, t_complex z2)
 t_complex	square_complex(t_complex z)
 {
 	t_complex	result;
+
 	result.x = (z.x * z.x) - (z.y * z.y);
 	result.y = 2 * z.x * z.y;
 	return (result);
@@ -71,4 +87,3 @@ double	ft_atod(const char *str)
 	result += fraction / divisor;
 	return (result * sign);
 }
-

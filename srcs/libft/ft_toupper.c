@@ -6,13 +6,13 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 11:37:35 by sshimura          #+#    #+#             */
-/*   Updated: 2024/05/06 14:57:14 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/19 22:01:36 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+staic int	ft_toupper(int c)
 {
 	int	result;
 
