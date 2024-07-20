@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:26:29 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 14:32:13 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:38:29 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	close_handler(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_ptr, fractal->img.img_ptr);
 	mlx_destroy_window(fractal->mlx_ptr, fractal->window_ptr);
+	free(fractal->mlx_ptr);
 	fractal->mlx_ptr = NULL;
 	exit(EXIT_SUCCESS);
 }
