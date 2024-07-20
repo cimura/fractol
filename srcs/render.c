@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:31:15 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 14:32:27 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:40:49 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	my_pixel_put(int x, int y, t_img *img, int color)
 	}
 }
 
-bool	terminate(t_fractal *fractal)
+static bool	terminate(t_fractal *fractal)
 {
 	if (!ft_strncmp(fractal->name, "mandelbrot", 10))
 		return (Mandel(fractal));

@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:26:29 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 14:38:29 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:45:25 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	key_handler(int keycode, t_fractal *fractal)
 {
 	if (keycode == 53)
 		close_handler(fractal);
-	if (keycode == 123)
+	else if (keycode == 123)
 		fractal->shift_x -= (0.5 * fractal->zoom);
 	else if (keycode == 124)
 		fractal->shift_x += (0.5 * fractal->zoom);
@@ -51,7 +51,6 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 		fractal->shift_y = (map(y, 2, -2, HEIGHT)
 				* fractal->zoom) + fractal->shift_y;
 		fractal->zoom *= 0.90;
-		fractal->zoom_level *= fractal->zoom;
 	}
 	else if (button == 4)
 	{
@@ -60,7 +59,6 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 		fractal->shift_y = (map(y, 2, -2, HEIGHT)
 				* fractal->zoom) + fractal->shift_y;
 		fractal->zoom *= 1.1;
-		fractal->zoom_level *= fractal->zoom;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 14:33:22 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:45:16 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ typedef struct s_fractal
 	double	julia_y;
 	int		mouse_x;
 	int		mouse_y;
-	double	zoom_level;
 }				t_fractal;
 
 typedef struct s_complex
@@ -81,7 +80,6 @@ t_complex	square_complex(t_complex z);
 
 // *** render ***
 void		my_pixel_put(int x, int y, t_img *img, int color);
-bool		terminate(t_fractal *fractal);
 int			render_next_frame(t_fractal *fractal);
 
 // *** events ***

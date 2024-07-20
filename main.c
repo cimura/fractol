@@ -70,6 +70,9 @@ void	print_controls(void)
 
 int	main(int argc, char **argv)
 {
+  char *alloc = malloc(1);
+  // alloc[0] = 'A';
+  // return (0);
 	if (argc < 2)
 	{
 		ft_putstr_fd(RED"Error: Not enough arguments\n\n"RESET, 1);

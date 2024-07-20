@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 14:25:36 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 14:32:17 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:41:58 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,18 @@ static void	print_controls(void)
 
 int	main(int argc, char **argv)
 {
+	t_fractal	fractal;
+
 	if (argc < 2)
 	{
 		ft_putstr_fd(RED"Error: Not enough arguments\n\n"RESET, 1);
 		print_usage();
 		exit(EXIT_FAILURE);
 	}
-	if ((2 == argc && !ft_strncmp(argv[1], "mandelbrot", 10))
+	else if ((2 == argc && !ft_strncmp(argv[1], "mandelbrot", 10))
 		|| (4 == argc && !ft_strncmp(argv[1], "julia", 5))
 		|| (2 == argc && !ft_strncmp(argv[1], "burning", 7)))
-	{
-		printf("hello\n");
-	}
+		fractal_init(&fractal);
 	else
 	{
 		ft_putstr_fd(RED"Error: Invalid arguments\n\n"RESET, 1);

@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:32:21 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 14:32:03 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:44:32 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ void	fractal_init(t_fractal *fractal)
 		malloc_error();
 	}
 	fractal->img.pixel_ptr = mlx_get_data_addr(fractal->img.img_ptr,
-			&fractal->img.bpp,
-			&fractal->img.line_length,
-			&fractal->img.endian);
+			&fractal->img.bpp, &fractal->img.line_length, &fractal->img.endian);
 	events_init(fractal);
 	data_init(fractal);
 }
