@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/21 00:45:16 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:53:07 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdbool.h>
 # include <mlx.h>
 # include <math.h>
-# include <stdbool.h>
 # include "../srcs/libft/libft.h"
 
 # define WIDTH 1600

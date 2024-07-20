@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:32:21 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/21 00:44:32 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/21 00:52:25 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	data_init(t_fractal *fractal)
 	fractal->termination = 1000000;
 	fractal->mouse_x = 0;
 	fractal->mouse_y = 0;
-	fractal->zoom_level = 1.0;
 }
 
 static void	events_init(t_fractal *fractal)
