@@ -6,11 +6,11 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:32:21 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 13:32:38 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:03 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 static void	malloc_error(void)
 {

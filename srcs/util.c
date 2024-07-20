@@ -6,11 +6,11 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:33:15 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 13:42:33 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:32 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 static int	setup(const char *str, double *fraction,
 						double *divisor)

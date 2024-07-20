@@ -6,11 +6,11 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 14:25:36 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 14:25:46 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:17 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 static void	print_usage(void)
 {

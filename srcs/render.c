@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:31:15 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/19 21:54:27 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:27 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 void	my_pixel_put(int x, int y, t_img *img, int color)
 {

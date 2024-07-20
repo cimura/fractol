@@ -6,11 +6,11 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:54:38 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 13:33:42 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:24 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 double	map(double unscaled_num, double new_min
 			, double new_max, double old_max)

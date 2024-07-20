@@ -6,11 +6,11 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:20:42 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 11:08:23 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:32:21 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "../include/fractal.h"
 
 bool	Mandel(t_fractal *fractal)
 {
