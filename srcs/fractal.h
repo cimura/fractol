@@ -6,7 +6,7 @@
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 01:17:07 by cimy             ###   ########.fr       */
+/*   Updated: 2024/07/20 14:29:58 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,14 @@
 # define WIDTH 1600
 # define HEIGHT 1200
 
-# define RED 0xFF0000
-# define GREEN 0x00FF00
-# define BLUE 0x0000FF
 # define WHITE 0xFFFFFF
 # define BLACK 0x000000
-# define YELLOW 0xFFFF00
-# define CYAN 0x00FFFF
-# define MAGENTA 0xFF00FF
-# define GRAY 0x808080
-# define ORANGE 0xFFA500
+
+# define BLUE "\033[1;34m"
+# define GREEN "\033[1;32m"
+# define YELLOW "\033[1;33m"
+# define RED "\033[1;31m"
+# define RESET "\033[0m"
 
 typedef struct s_img
 {
@@ -80,23 +78,24 @@ double		map(double unscaled_num, double new_min,
 				double new_max, double old_max);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
-int			decide_sign(const char *str, int *i);
-double		ft_atod(const char *str);
 
 // *** render ***
-void	my_pixel_put(int x, int y, t_img *img, int color);
-bool	terminate(t_fractal *fractal);
-int		render_next_frame(t_fractal *fractal);
+void		my_pixel_put(int x, int y, t_img *img, int color);
+bool		terminate(t_fractal *fractal);
+int			render_next_frame(t_fractal *fractal);
 
 // *** events ***
-int		key_handler(int keycode, t_fractal *fractal);
-int		close_handler(t_fractal *fractal);
-int		mouse_handler(int button, int x, int y, t_fractal *fractal);
-int		julia_track(int x, int y, t_fractal *fractal);
+int			key_handler(int keycode, t_fractal *fractal);
+int			close_handler(t_fractal *fractal);
+int			mouse_handler(int button, int x, int y, t_fractal *fractal);
+int			julia_track(int x, int y, t_fractal *fractal);
 
 // *** mandel ***
-bool	Mandel(t_fractal *fractal);
-bool	Julia(t_fractal *fractal);
-bool	burning_ship(t_fractal *fractal);
+bool		Mandel(t_fractal *fractal);
+bool		Julia(t_fractal *fractal);
+bool		burning_ship(t_fractal *fractal);
+
+// *** util ***
+double		ft_atod(const char *str);
 
 #endif

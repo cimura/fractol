@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mandel.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:20:42 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/19 21:58:13 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/20 11:08:23 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ bool	Mandel(t_fractal *fractal)
 	int			i;
 	int			color;
 
-	fractal->termination *= fractal->zoom;
-	z.x = 0;
-	z.y = 0;
-	c.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
-	c.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	init_condition(fractal, &z, &c);
+
+	// fractal->termination *= fractal->zoom;
+	// z.x = 0;
+	// z.y = 0;
+	// c.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
+	// c.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
 
 	i = 0;
 	while (i < fractal->out_judge)
@@ -49,11 +51,13 @@ bool	Julia(t_fractal *fractal)
 	int			i;
 	int			color;
 
-	fractal->termination *= fractal->zoom;
-	c.x = fractal->julia_x;
-	c.y = fractal->julia_y;
-	z.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
-	z.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	init_condition(fractal, &z, &c);
+
+	// fractal->termination *= fractal->zoom;
+	// c.x = fractal->julia_x;
+	// c.y = fractal->julia_y;
+	// z.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
+	// z.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
 
 	i = 0;
 	while (i < fractal->out_judge)
@@ -79,11 +83,12 @@ bool	burning_ship(t_fractal *fractal)
 	int			i;
 	int			color;
 
-	fractal->termination *= fractal->zoom;
-	z.x = 0;
-	z.y = 0;
-	c.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
-	c.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
+	init_condition(fractal, &z, &c);
+	// fractal->termination *= fractal->zoom;
+	// z.x = 0;
+	// z.y = 0;
+	// c.x = (map(fractal->x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
+	// c.y = (map(fractal->y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
 
 	i = 0;
 	while (i < fractal->out_judge)
@@ -102,4 +107,28 @@ bool	burning_ship(t_fractal *fractal)
 	}
 	my_pixel_put(fractal->x, fractal->y, &fractal->img, BLACK);
 	return (true);
+}
+
+void	init_condition(t_fractal *fractal, t_complex *z, t_complex *c)
+{
+	fractal->termination *= fractal->zoom;
+	if (!ft_strncmp(fractal->name, "mandelbrot", 10)
+		|| !ft_strncmp(fractal->name, "burning", 7))
+	{
+		z->x = 0;
+		z->y = 0;
+		c->x = (map(fractal->x, -2, +2, WIDTH)
+				* fractal->zoom) + fractal->shift_x;
+		c->y = (map(fractal->y, +2, -2, HEIGHT)
+				* fractal->zoom) + fractal->shift_y;
+	}
+	else if (!ft_strncmp(fractal->name, "julia", 5))
+	{
+		z->x = fractal->julia_x;
+		z->y = fractal->julia_y;
+		c->x = (map(fractal->x, -2, +2, WIDTH)
+				* fractal->zoom) + fractal->shift_x;
+		c->y = (map(fractal->y, +2, -2, HEIGHT)
+				* fractal->zoom) + fractal->shift_y;
+	}
 }

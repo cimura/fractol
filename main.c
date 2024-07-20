@@ -1,18 +1,46 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/20 14:25:36 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/20 14:25:46 by cimy             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// #include "fractal.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-#include "fractal.h"
+#define BLUE "\033[1;34m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define RED "\033[1;31m"
+#define RESET "\033[0m"
 
-static void	print_usage(void)
+static size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+static void	ft_putstr_fd(char *s, int fd)
+{
+	if (s == NULL)
+		return ;
+	write(fd, &*s, ft_strlen(s));
+}
+static int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+
+void	print_usage(void)
 {
 	ft_putstr_fd(BLUE"Usage:\n"RESET, 1);
 	ft_putstr_fd(GREEN"	./fractal mandelbrot\n", 1);
@@ -24,7 +52,7 @@ static void	print_usage(void)
 	ft_putstr_fd("	./fractal burning_ship\n\n"RESET, 1);
 }
 
-static void	print_controls(void)
+void	print_controls(void)
 {
 	ft_putstr_fd(BLUE"Controls:\n"RESET, 1);
 	ft_putstr_fd(YELLOW"  Arrow keys :  "RESET, 1);
