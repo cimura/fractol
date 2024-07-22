@@ -10,7 +10,6 @@ RESET		=	\033[0m
 LIBFT_DIR	=	srcs/libft
 
 SRCS		=	srcs/events.c \
-				srcs/mouse.c \
 				srcs/init.c \
 				srcs/math_util.c \
 				srcs/render.c \

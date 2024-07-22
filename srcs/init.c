@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:32:21 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/22 15:45:33 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:05:24 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ static void	events_init(t_fractal *fractal)
 {
 	mlx_key_hook(fractal->window_ptr, key_handler, fractal);
 	mlx_mouse_hook(fractal->window_ptr, mouse_handler, fractal);
-	mlx_hook(fractal->window_ptr, 4, 0, mouse_press, fractal);
-	mlx_hook(fractal->window_ptr, 5, 0, mouse_release, fractal);
-	mlx_hook(fractal->window_ptr, 6, 0, mouse_move, fractal);
 	mlx_hook(fractal->window_ptr, 6, 1L << 6, julia_track, fractal);
 	mlx_hook(fractal->window_ptr, 17, 0, close_handler, fractal);
 	mlx_loop_hook(fractal->mlx_ptr, render_next_frame, fractal);

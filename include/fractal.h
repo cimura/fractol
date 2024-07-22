@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/22 15:25:10 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:20:28 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@
 # define WIDTH 1600
 # define HEIGHT 1200
 
-# define WHITE 0xFFFFFF
-# define BLACK 0x000000
+# define _WHITE 0xFFFFFF
+# define _BLACK 0x000000
+# define _BLUE	0x0000FF
+# define _RED	0xFF0000
+# define _YELLOW 0xFFFF00
 
 # define BLUE "\033[1;34m"
 # define GREEN "\033[1;32m"
@@ -43,9 +46,6 @@ typedef struct s_img
 
 typedef struct s_mouse
 {
-	int		is_pressed;
-	int		prev_x;
-	int		prev_y;
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
@@ -64,9 +64,6 @@ typedef struct s_fractal
 	int		out_judge;
 	int		termination;
 	int		count;
-	// double	shift_x;
-	// double	shift_y;
-	// double	zoom;
 	double	julia_x;
 	double	julia_y;
 }				t_fractal;
@@ -95,11 +92,6 @@ int			render_next_frame(t_fractal *fractal);
 int			key_handler(int keycode, t_fractal *fractal);
 int			close_handler(t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
-
-// *** mouse ***
-int			mouse_press(int button, int x, int y, t_fractal *fractal);
-int			mouse_release(int button, int x, int y, t_fractal *fractal);
-int			mouse_move(int x, int y, t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 
 // *** mandel ***

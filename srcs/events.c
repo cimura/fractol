@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:26:29 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/22 15:18:41 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:10:19 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,27 @@ int	julia_track(int x, int y, t_fractal *fractal)
 			* fractal->mouse.zoom + fractal->mouse.shift_x;
 		fractal->julia_y = map(y, +2, -2, HEIGHT)
 			* fractal->mouse.zoom + fractal->mouse.shift_y;
+	}
+	return (0);
+}
+
+int	mouse_handler(int button, int x, int y, t_fractal *fractal)
+{
+	if (button == 5)
+	{
+		fractal->mouse.shift_x += (map(x, -2, 2, WIDTH)
+				* fractal->mouse.zoom) / 3;
+		fractal->mouse.shift_y += (map(y, 2, -2, HEIGHT)
+				* fractal->mouse.zoom) / 3;
+		fractal->mouse.zoom *= 0.90;
+	}
+	else if (button == 4)
+	{
+		fractal->mouse.shift_x += (map(x, -2, 2, WIDTH)
+				* fractal->mouse.zoom) / 3;
+		fractal->mouse.shift_y += (map(y, 2, -2, HEIGHT)
+				* fractal->mouse.zoom) / 3;
+		fractal->mouse.zoom *= 1.1;
 	}
 	return (0);
 }

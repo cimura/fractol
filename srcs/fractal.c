@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:20:42 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/22 15:18:35 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:24:18 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,16 @@ bool	mandel(t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) - (z.y * z.y) > fractal->escape_value)
 		{
-			color = map(i, BLACK, WHITE, fractal->out_judge);
+			color = map(i, _BLACK, _WHITE, fractal->out_judge);
 			my_pixel_put(fractal->x, fractal->y, &fractal->img, color);
 			return (true);
 		}
 		fractal->count++;
 		i++;
 	}
-	my_pixel_put(fractal->x, fractal->y, &fractal->img, BLACK);
+	if (z.x * z.y > 0)
+		color = map(i, _YELLOW, _WHITE, fractal->out_judge);
+	my_pixel_put(fractal->x, fractal->y, &fractal->img, _BLACK);
 	return (true);
 }
 
@@ -75,14 +77,14 @@ bool	julia(t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->escape_value)
 		{
-			color = map(i, BLACK, WHITE, fractal->out_judge);
+			color = map(i, _BLACK, _BLUE, fractal->out_judge);
 			my_pixel_put(fractal->x, fractal->y, &fractal->img, color);
 			return (true);
 		}
 		fractal->count++;
 		i++;
 	}
-	my_pixel_put(fractal->x, fractal->y, &fractal->img, BLACK);
+	my_pixel_put(fractal->x, fractal->y, &fractal->img, _BLACK);
 	return (true);
 }
 
@@ -103,13 +105,13 @@ bool	burning_ship(t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) - (z.y * z.y) > fractal->escape_value)
 		{
-			color = map(i, WHITE, BLACK, fractal->out_judge);
+			color = map(i, _WHITE, _BLACK, fractal->out_judge);
 			my_pixel_put(fractal->x, fractal->y, &fractal->img, color);
 			return (true);
 		}
 		fractal->count++;
 		i++;
 	}
-	my_pixel_put(fractal->x, fractal->y, &fractal->img, BLACK);
+	my_pixel_put(fractal->x, fractal->y, &fractal->img, _BLACK);
 	return (true);
 }
