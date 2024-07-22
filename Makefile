@@ -1,4 +1,4 @@
-NAME		=	fractal
+NAME		=	fractol
 
 GREEN		=	\033[0;32m
 CYAN		=	\033[0;36m
@@ -10,12 +10,13 @@ RESET		=	\033[0m
 LIBFT_DIR	=	srcs/libft
 
 SRCS		=	srcs/events.c \
+				srcs/mouse.c \
 				srcs/init.c \
 				srcs/math_util.c \
 				srcs/render.c \
 				srcs/fractal.c \
 				srcs/util.c \
-				srcs/main.c \
+				srcs/main.c 
 
 LIBFT		=	$(LIBFT_DIR)/libft.a
 CC			=	cc

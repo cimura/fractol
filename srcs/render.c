@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:31:15 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/21 11:49:49 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:41:37 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static bool	terminate(t_fractal *fractal)
 		return (mandel(fractal));
 	else if (!ft_strncmp(fractal->name, "julia", 5))
 		return (julia(fractal));
-	else if (!ft_strncmp(fractal->name, "burning", 5))
+	else if (!ft_strncmp(fractal->name, "ship", 4))
 		return (burning_ship(fractal));
 	return (true);
 }

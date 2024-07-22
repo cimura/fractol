@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/21 11:49:15 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:25:10 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,22 @@ typedef struct s_img
 	int		line_length;
 }				t_img;	
 
+typedef struct s_mouse
+{
+	int		is_pressed;
+	int		prev_x;
+	int		prev_y;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
+}				t_mouse;
+
 typedef struct s_fractal
 {
 	double	x;
 	double	y;
 	t_img	img;
+	t_mouse	mouse;
 	void	*mlx_ptr;
 	void	*window_ptr;
 	char	*name;
@@ -53,13 +64,11 @@ typedef struct s_fractal
 	int		out_judge;
 	int		termination;
 	int		count;
-	double	shift_x;
-	double	shift_y;
-	double	zoom;
+	// double	shift_x;
+	// double	shift_y;
+	// double	zoom;
 	double	julia_x;
 	double	julia_y;
-	int		mouse_x;
-	int		mouse_y;
 }				t_fractal;
 
 typedef struct s_complex
@@ -85,8 +94,13 @@ int			render_next_frame(t_fractal *fractal);
 // *** events ***
 int			key_handler(int keycode, t_fractal *fractal);
 int			close_handler(t_fractal *fractal);
-int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 int			julia_track(int x, int y, t_fractal *fractal);
+
+// *** mouse ***
+int			mouse_press(int button, int x, int y, t_fractal *fractal);
+int			mouse_release(int button, int x, int y, t_fractal *fractal);
+int			mouse_move(int x, int y, t_fractal *fractal);
+int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 
 // *** mandel ***
 bool		mandel(t_fractal *fractal);

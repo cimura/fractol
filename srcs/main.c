@@ -6,7 +6,7 @@
 /*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 14:25:36 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/21 12:00:49 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:42:09 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	print_usage(void)
 {
 	ft_putstr_fd(BLUE"Usage:\n"RESET, 1);
-	ft_putstr_fd(GREEN"	./fractal mandelbrot\n", 1);
-	ft_putstr_fd(GREEN"	./fractal julia <real> <imaginary>\n", 1);
-	ft_putstr_fd(GREEN"	./fractal burning_ship\n"RESET, 1);
+	ft_putstr_fd(GREEN"	./fractol mandelbrot\n", 1);
+	ft_putstr_fd(GREEN"	./fractol julia <real> <imaginary>\n", 1);
+	ft_putstr_fd(GREEN"	./fractol ship\n"RESET, 1);
 	ft_putstr_fd(BLUE"\nExamples:\n"RESET, 1);
-	ft_putstr_fd(GREEN"	./fractal mandelbrot\n", 1);
-	ft_putstr_fd("	./fractal julia -0.4 0.6\n", 1);
-	ft_putstr_fd("	./fractal burning_ship\n\n"RESET, 1);
+	ft_putstr_fd(GREEN"	./fractol mandelbrot\n", 1);
+	ft_putstr_fd("	./fractol julia -0.4 0.6\n", 1);
+	ft_putstr_fd("	./fractol ship\n\n"RESET, 1);
 }
 
 static void	print_controls(void)
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 	}
 	else if ((2 == argc && !ft_strncmp(argv[1], "mandelbrot", 10))
 		|| (4 == argc && !ft_strncmp(argv[1], "julia", 5))
-		|| (2 == argc && !ft_strncmp(argv[1], "burning", 7)))
+		|| (2 == argc && !ft_strncmp(argv[1], "ship", 4)))
 	{
 		name_init(&fractal, argv);
 		fractal_init(&fractal);
