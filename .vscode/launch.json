@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/cimy/coding/test/tmp_fractol/srcs",
+      "program": "/Users/cimy/coding/test/tmp_fractol/srcs/build/Debug/outDebug"
+    }
+  ]
+}

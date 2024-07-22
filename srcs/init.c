@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 13:32:21 by cimy              #+#    #+#             */
-/*   Updated: 2024/07/22 17:05:24 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 22:14:20 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	data_init(t_fractal *fractal)
 	fractal->mouse.shift_y = 0.0;
 	fractal->mouse.zoom = 1.0;
 	fractal->termination = 1000000;
+  fractal->julia_color = _BLUE;
 }
 
 static void	events_init(t_fractal *fractal)

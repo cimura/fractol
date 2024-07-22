@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:20:42 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/22 17:24:18 by sshimura         ###   ########.fr       */
+/*   Updated: 2024/07/22 22:14:00 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ bool	julia(t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->escape_value)
 		{
-			color = map(i, _BLACK, _BLUE, fractal->out_judge);
-			my_pixel_put(fractal->x, fractal->y, &fractal->img, color);
+			my_pixel_put(fractal->x, fractal->y, &fractal->img, fractal->julia_color);
 			return (true);
 		}
 		fractal->count++;
