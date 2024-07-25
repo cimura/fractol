@@ -77,13 +77,14 @@ bool	julia(t_fractal *fractal)
 		z = sum_complex(square_complex(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > fractal->escape_value)
 		{
-			my_pixel_put(fractal->x, fractal->y, &fractal->img, fractal->julia_color);
+			color = map(i, _BLACK, _BLUE, fractal->out_judge);
+			my_pixel_put(fractal->x, fractal->y, &fractal->img, color);
 			return (true);
 		}
 		fractal->count++;
 		i++;
 	}
-	my_pixel_put(fractal->x, fractal->y, &fractal->img, _BLACK);
+	my_pixel_put(fractal->x, fractal->y, &fractal->img, fractal->julia_color);
 	return (true);
 }
 

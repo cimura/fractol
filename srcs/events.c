@@ -12,6 +12,25 @@
 
 #include "../include/fractal.h"
 
+static void	color_change(int keycode, t_fractal *fractal)
+{
+	if (keycode == XK_minus && fractal->out_judge > 25)
+	{
+		if (!ft_strncmp(fractal->name, "julia", 5))
+			fractal->julia_color = _RED;
+		else
+			fractal->out_judge -= 15;
+
+	}
+	else if (keycode == XK_equal && fractal->out_judge < 100)
+	{
+		if (!ft_strncmp(fractal->name, "julia", 5))
+			fractal->julia_color = _YELLOW;
+		else
+			fractal->out_judge += 15;
+	}
+}
+
 int	close_handler(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_ptr, fractal->img.img_ptr);
@@ -21,39 +40,21 @@ int	close_handler(t_fractal *fractal)
 
 int	key_handler(int keycode, t_fractal *fractal)
 {
-	if (keycode == 27 || keycode == 24)
+	if (keycode == XK_minus || keycode == XK_equal)
 		color_change(keycode, fractal);
-	else if (keycode == 53)
+	else if (keycode == XK_Escape)
 		close_handler(fractal);
-	else if (keycode == 123)
+	else if (keycode == XK_Left)
 		fractal->mouse.shift_x -= (0.5 * fractal->mouse.zoom);
-	else if (keycode == 124)
+	else if (keycode == XK_Right)
 		fractal->mouse.shift_x += (0.5 * fractal->mouse.zoom);
-	else if (keycode == 125)
+	else if (keycode == XK_Down)
 		fractal->mouse.shift_y -= (0.5 * fractal->mouse.zoom);
-	else if (keycode == 126)
+	else if (keycode == XK_Up)
 		fractal->mouse.shift_y += (0.5 * fractal->mouse.zoom);
-	else if (keycode == 49)
+	else if (keycode == XK_space)
 		data_init(fractal);
 	return (0);
-}
-
-static void	color_change(int keycode, t_fractal *fractal)
-{
-	else if (keycode == 27 && fractal->out_judge > 25)
-	{
-		if (!ft_strncmp(fractal->name, "julia", 5))
-			fractal->julia_color = _RED;
-		else
-			fractal->out_judge -= 15;
-	}
-	else if (keycode == 24 && fractal->out_judge < 100)
-	{
-		if (!ft_strncmp(fractal->name, "julia", 5))
-			fractal->julia_color = _YELLOW;
-		else
-			fractal->out_judge += 15;
-	}
 }
 
 int	julia_track(int x, int y, t_fractal *fractal)

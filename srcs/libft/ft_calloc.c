@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define SIZE 1000000
+#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 		return (malloc(0));
-	if (SIZE_MAX / count < size)
+	if (INT_MAX / count < size)
 		return (NULL);
 	total_size = count * size;
 	ptr = (unsigned char *)malloc(sizeof(unsigned char) * total_size);

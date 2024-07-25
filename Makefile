@@ -8,6 +8,7 @@ BOLD		=	\033[1m
 RESET		=	\033[0m	
 
 LIBFT_DIR	=	srcs/libft
+MINILIB_DIR =	srcs/minilibx-linux
 
 SRCS		=	srcs/events.c \
 				srcs/init.c \
@@ -18,9 +19,11 @@ SRCS		=	srcs/events.c \
 				srcs/main.c 
 
 LIBFT		=	$(LIBFT_DIR)/libft.a
+MINILIB		=	$(MINILIB_DIR)/libmlx.a
+
 CC			=	cc
 CFLAGS		=	-O3 -Wall -Wextra -Werror -fsanitize=address
-LDFLAGS		=	-Imlx -lmlx -framework OpenGL -framework AppKit
+LDFLAGS 	=	-L$(MINILIB_DIR) -lmlx -lX11 -lXext -lm
 OBJS		=	$(SRCS:%.c=%.o)
 
 TOTAL_FILES	= $(words $(SRCS))
@@ -37,7 +40,7 @@ endef
 
 $(NAME): $(OBJS) $(LIBFT)
 	@echo "\n$(GREEN)$(BOLD)Linking $@...$(RESET)"
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(LDFLAGS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(MINILIB) $(LDFLAGS)
 	@echo "$(MAGENTA)$(BOLD)"
 	@echo "    ____                __        __"
 	@echo "   / __/________ ______/ /_____ _/ /"
@@ -54,7 +57,6 @@ $(LIBFT):
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	$(call update_progress)
-
 
 all: $(NAME)
 
