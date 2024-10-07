@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractal.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sshimura <sshimura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:56:24 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/22 22:13:10 by cimy             ###   ########.fr       */
+/*   Updated: 2024/10/07 13:24:21 by sshimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <X11/X.h>
 # include <X11/Xlib.h>
 # include <X11/keysym.h>
-# include "../srcs/minilibx-linux/mlx.h"  // Include the MiniLibX header
 # include "../srcs/libft/libft.h"
+# include "../minilibx-linux/mlx.h"
 
 # define WIDTH 1600
 # define HEIGHT 1200

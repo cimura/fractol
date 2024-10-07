@@ -8,7 +8,7 @@ BOLD		=	\033[1m
 RESET		=	\033[0m	
 
 LIBFT_DIR	=	srcs/libft
-MINILIB_DIR =	srcs/minilibx-linux
+MINILIB_DIR =	minilibx-linux
 
 SRCS		=	srcs/events.c \
 				srcs/init.c \
@@ -22,7 +22,7 @@ LIBFT		=	$(LIBFT_DIR)/libft.a
 MINILIB		=	$(MINILIB_DIR)/libmlx.a
 
 CC			=	cc
-CFLAGS		=	-O3 -Wall -Wextra -Werror -fsanitize=address
+CFLAGS		=	-O3 -Wall -Wextra -Werror -g -fsanitize=address
 LDFLAGS 	=	-L$(MINILIB_DIR) -lmlx -lX11 -lXext -lm
 OBJS		=	$(SRCS:%.c=%.o)
 
@@ -38,7 +38,7 @@ define update_progress
 		$(TOTAL_FILES)
 endef
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(OBJS) $(LIBFT) $(MINILIB)
 	@echo "\n$(GREEN)$(BOLD)Linking $@...$(RESET)"
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(MINILIB) $(LDFLAGS)
 	@echo "$(MAGENTA)$(BOLD)"
@@ -53,6 +53,10 @@ $(NAME): $(OBJS) $(LIBFT)
 $(LIBFT):
 	@echo "$(CYAN)$(BOLD)\nBuilding libft...$(RESET)"
 	@$(MAKE) -C $(LIBFT_DIR)
+
+$(MINILIB):
+	@echo "$(CYAN)$(BOLD)\nBuilding minilibx...$(RESET)"
+	@$(MAKE) -C $(MINILIB_DIR)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
