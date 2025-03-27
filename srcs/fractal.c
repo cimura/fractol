@@ -1,16 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandel.c                                           :+:      :+:    :+:   */
+/*   fractal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cimy <cimy@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:20:42 by sshimura          #+#    #+#             */
-/*   Updated: 2024/07/20 14:32:21 by cimy             ###   ########.fr       */
+/*   Updated: 2025/03/27 22:01:35 by cimy             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractal.h"
+
+void	init_condition(t_fractal *fractal, t_complex *z, t_complex *c)
+{
+	fractal->termination *= fractal->zoom;
+	if (!ft_strncmp(fractal->name, "mandelbrot", 10)
+		|| !ft_strncmp(fractal->name, "burning", 7))
+	{
+		z->x = 0;
+		z->y = 0;
+		c->x = (map(fractal->x, -2, +2, WIDTH)
+				* fractal->zoom) + fractal->shift_x;
+		c->y = (map(fractal->y, +2, -2, HEIGHT)
+				* fractal->zoom) + fractal->shift_y;
+	}
+	else if (!ft_strncmp(fractal->name, "julia", 5))
+	{
+		z->x = fractal->julia_x;
+		z->y = fractal->julia_y;
+		c->x = (map(fractal->x, -2, +2, WIDTH)
+				* fractal->zoom) + fractal->shift_x;
+		c->y = (map(fractal->y, +2, -2, HEIGHT)
+				* fractal->zoom) + fractal->shift_y;
+	}
+}
 
 bool	Mandel(t_fractal *fractal)
 {
@@ -107,28 +131,4 @@ bool	burning_ship(t_fractal *fractal)
 	}
 	my_pixel_put(fractal->x, fractal->y, &fractal->img, BLACK);
 	return (true);
-}
-
-void	init_condition(t_fractal *fractal, t_complex *z, t_complex *c)
-{
-	fractal->termination *= fractal->zoom;
-	if (!ft_strncmp(fractal->name, "mandelbrot", 10)
-		|| !ft_strncmp(fractal->name, "burning", 7))
-	{
-		z->x = 0;
-		z->y = 0;
-		c->x = (map(fractal->x, -2, +2, WIDTH)
-				* fractal->zoom) + fractal->shift_x;
-		c->y = (map(fractal->y, +2, -2, HEIGHT)
-				* fractal->zoom) + fractal->shift_y;
-	}
-	else if (!ft_strncmp(fractal->name, "julia", 5))
-	{
-		z->x = fractal->julia_x;
-		z->y = fractal->julia_y;
-		c->x = (map(fractal->x, -2, +2, WIDTH)
-				* fractal->zoom) + fractal->shift_x;
-		c->y = (map(fractal->y, +2, -2, HEIGHT)
-				* fractal->zoom) + fractal->shift_y;
-	}
 }
